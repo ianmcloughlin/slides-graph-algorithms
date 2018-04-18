@@ -85,14 +85,14 @@
 
 
 \begin{frame}{Heap sort}
-  \vspace{4mm}
   \begin{description}
     \setlength\itemsep{4mm}
     \item[Comparison] sorting algorithm.
-    \item[Better] worst case performance than quicksort: \(O(n \log n)\).
-    \item[Same] average performance as quicksort: \(O(n \log n)\) versus \(O(n^2)\).
-    \item[Uses] trees to sort elements.
-    \item[Heap] is a binary tree where label of each parent is less than or equal to its children's.
+    \item[Better] worst case performance than quicksort: \(O(n \log n)\) versus \(O(n^2)\).
+    \item[Same] average case performance as quicksort: \(O(n \log n)\).
+    \item[Better] best case performance as quicksort: \(O(n)\) versus \( O(n \log n) \).
+    \item[Claims] that it's slower because it makes more swaps. Above is in terms of comparisons.
+    \item[Heap] is a binary tree where label of each parent is less than or equal to those of children.
   \end{description}
 \end{frame}
 
@@ -153,11 +153,10 @@
 \begin{frame}{Tree to a heap}
   \begin{description}
     \setlength\itemsep{4mm}
-    \item[Start] at the last parent and move backwards through the other parents as follows.
+    \item[Start] at the last parents and move backwards through the other parents as follows.
     \item[Suppose] current parent is $x_r$ and the trees at $x_{2r}$ and $x_{2r+1}$ are already heaps.
-    \item[Compare] $x_r$ to .
     \item[If] $x_{2r}$ or $x_{2r+1}$ is smaller than $x_r$ then swap $x_r$ with the smaller child.
-    \item[If necessary] apply this procedure to the new child.
+    \item[If necessary] apply this procedure to the tree starting at the new child.
   \end{description}
 \end{frame}
 
@@ -193,7 +192,7 @@
 \begin{frame}{Transforming to a sorted list}
   \begin{description}
     \setlength\itemsep{4mm}
-    \item[Start] with and empty list.
+    \item[Start] with empty list.
     \item[Place] the root of the heap at the end of the list.
     \item[Remove] the last leaf and place it at the root.
     \item[Transform] the tree to a heap again. This is relatively easy since the subtrees at $x_2$ and $x_3$ are already heaps.
